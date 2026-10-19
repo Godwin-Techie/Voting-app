@@ -1,20 +1,17 @@
 global:
-  imageTag: "latest"
+  image:Tag: "latest"
 
 vote:
   image:
     repository: device66/voting-app-vote
-    tag: "{{ .Values.global.imageTag }}"
 
 worker:
   image:
     repository: device66/voting-app-worker
-    tag: "{{ .Values.global.imageTag }}"
 
 result:
   image:
     repository: device66/voting-app-result
-    tag: "{{ .Values.global.imageTag }}"
 
 redis:
   image:
