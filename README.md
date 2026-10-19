@@ -32,7 +32,7 @@ docker stack deploy --compose-file docker-stack.yml vote
 
 The folder k8s-specifications contains the YAML specifications of the Voting App's services
 
-Run the following command to create the deployments and services. Note it will create these resources in your current namespace (`default` if you haven't changed it.)
+Run the following command toe the deployments and services. Note it will create these resources in your current namespace (`default` if you haven't changed it.)
 
 ```shell
 kubectl create -f k8s-specifications/
