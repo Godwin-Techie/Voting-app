@@ -30,7 +30,7 @@ docker stack deploy --compose-file docker-stack.yml vote
 
 ## Run the app in Kubernetes
 
-The folder k8s-specifications contains the YAML specifications of the Voting App's services.
+The folder k8s-specifications contains the YAML specifications of the Voting App's services
 
 Run the following command to create the deployments and services. Note it will create these resources in your current namespace (`default` if you haven't changed it.)
 
@@ -50,11 +50,11 @@ kubectl delete -f k8s-specifications/
 
 ![Architecture diagram](architecture.excalidraw.png)
 
-* A front-end web app in [Python](/vote) which lets you vote between two options
-* A [Redis](https://hub.docker.com/_/redis/) which collects new votes
-* A [.NET](/worker/) worker which consumes votes and stores them in…
-* A [Postgres](https://hub.docker.com/_/postgres/) database backed by a Docker volume
-* A [Node.js](/result) web app which shows the results of the voting in real time
+- A front-end web app in [Python](/vote) which lets you vote between two options
+- A [Redis](https://hub.docker.com/_/redis/) which collects new votes
+- A [.NET](/worker/) worker which consumes votes and stores them in…
+- A [Postgres](https://hub.docker.com/_/postgres/) database backed by a Docker volume
+- A [Node.js](/result) web app which shows the results of the voting in real time
 
 ## Notes
 
