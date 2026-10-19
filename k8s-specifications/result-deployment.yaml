@@ -20,3 +20,15 @@ spec:
           ports:
             - containerPort: 80
               name: result
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: result
+spec:
+  type: LoadBalancer
+  selector:
+    app: result
+  ports:
+    - port: 8081
+      targetPort: 80
