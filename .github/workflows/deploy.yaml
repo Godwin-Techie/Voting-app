@@ -71,5 +71,10 @@ jobs:
       - name: Deploy with Helm
         run: |
           helm upgrade --install vote ./helm/vote \
-            --set global.image.tag=${{ github.sha }} \
-            --wait --timeout 300s
+            --set global.image.tag=${{ github.sha }}
+
+      # 11. Verify pods and services
+      - name: Verify pods and services
+        run: |
+          kubectl get pods
+          kubectl get svc
