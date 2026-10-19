@@ -71,4 +71,5 @@ jobs:
       - name: Deploy with Helm
         run: |
           helm upgrade --install vote ./helm/vote \
-            --set image.tag=${{ github.sha }}
+            --set global.image.tag=${{ github.sha }}
+            --wait --timeout 300s
