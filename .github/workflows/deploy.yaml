@@ -1,4 +1,4 @@
-name: Deploy to AKS
+name: CI/CD Pipeline for Voting Services
 
 on:
   push:
