@@ -37,13 +37,11 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # 5. Build and push Docker image
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v4
-        with:
-          context: .
-          push: true
-          tags: device66/voting-app-vote:${{ github.sha }}
+      # 5. Build and push all images with docker-compose
+      - name: Build and push with Docker Compose
+        run: |
+          docker compose build
+          docker compose push
 
       # 6. Set up kubectl
       - name: Set up kubectl
