@@ -1,0 +1,37 @@
+# values.yaml for vote Helm chart
+
+vote:
+  image:
+    repository: device66/voting-app-vote
+    tag: "{{ .Values.global.imageTag }}"
+  service:
+    type: ClusterIP
+    port: 80
+
+worker:
+  image:
+    repository: device66/voting-app-worker
+    tag: "{{ .Values.global.imageTag }}"
+
+result:
+  image:
+    repository: device66/voting-app-result
+    tag: "{{ .Values.global.imageTag }}"
+  service:
+    type: ClusterIP
+    port: 80
+
+redis:
+  image:
+    repository: redis
+    tag: alpine
+
+db:
+  image:
+    repository: postgres
+    tag: "15-alpine"
+  username: postgres
+  password: postgres
+
+global:
+  imageTag: "latest"

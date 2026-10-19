@@ -62,7 +62,12 @@ jobs:
           resource-group: GodwinRG
           cluster-name: device-aks-cluster
 
-      # 9. Deploy with Helm
+      # 9. Install Helm
+      - name: Install Helm
+        run: |
+          curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+
+      # 10. Deploy with Helm
       - name: Deploy with Helm
         run: |
           helm upgrade --install vote ./helm/vote \
