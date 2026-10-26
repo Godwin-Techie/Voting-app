@@ -57,7 +57,7 @@ jobs:
 
       # 8. Set AKS context
       - name: Set AKS context
-        uses: azure/aks-set-context@v3
+        uses: azure/aks-set-context@v5
         with:
           resource-group: GodwinRG
           cluster-name: device-aks-cluster
